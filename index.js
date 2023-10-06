@@ -12,5 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let newTut = tutorials.map((string)=>UpperFirst(string))
+  return newTut
+}
+function UpperFirst (Arr){
+ let newArr =[]
+  for (let i = 0; i < Arr.length; i++) {
+    if (i === 0) {
+      newArr.push(Arr[i].toUpperCase())
+    } else if (Arr[i-1] === " ") {
+         newArr.push(Arr[i].toUpperCase())
+        } else {newArr.push(Arr[i])}
+}
+
+return newArr.join('')
 }
